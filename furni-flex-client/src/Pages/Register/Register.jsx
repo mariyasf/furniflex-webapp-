@@ -6,14 +6,14 @@ import { BsApple } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-const Login = () => {
+const Register = () => {
     const [showPass, setShowPass] = useState(false);
 
     return (
         <div className='h-screen'>
             <Helmet>
                 <title>
-                    Signin
+                    Signup
                 </title>
             </Helmet>
             <div className="flex">
@@ -22,9 +22,39 @@ const Login = () => {
                 ">
                     <div className="bg-[#F5F5F5]
                      p-10 w-[500px] mx-auto">
-                        <h2 className='text-3xl font-Barlow font-medium'>Welcome Back!</h2>
-                        <p className="text-[#707070] font-medium text-base font-Barlow">Enter your Credentials to access your account</p>
-                        <form className='pt-11 space-y-4'>
+                        <div className="text-center text-black">
+                            <h3 className='text-2xl font-semibold'>Welcome To</h3>
+                            <h2 className='text-4xl font-bold'>Furni<span className='text-[#1E99F5]'>Flex</span></h2>
+                            <p className="text-[#707070] font-medium">Enter your Credentials to access your account</p>
+                        </div>
+
+                        <form className='pt-4 space-y-4'>
+                            <div className='flex flex-col md:flex-row gap-2'>
+                                <div className="flex-1 border bg-white p-1 px-3 rounded-md">
+                                    <label className="block font-normal text-[#707070] font-Barlow text-xs">
+                                        <span className="">First name</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="fName"
+                                        placeholder="Enter Your First name"
+                                        className="border-none outline-none text-sm text-black"
+                                    />
+                                </div>
+
+                                <div className="flex-1 border bg-white p-1 px-3 rounded-md">
+                                    <label className="block font-normal text-[#707070] font-Barlow text-xs">
+                                        <span className="">Last name</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="lName"
+                                        placeholder="Enter Your Last name"
+                                        className="border-none outline-none text-sm text-black"
+                                    />
+                                </div>
+
+                            </div>
                             <div className="border bg-white p-1 px-3 rounded-md">
                                 <label className="block font-normal text-[#707070] font-Barlow text-xs">
                                     <span className="">Email address</span>
@@ -54,7 +84,6 @@ const Login = () => {
                                 </div>
                             </div>
 
-                            <p className="text-[#1E99F5] text-end text-sm font-medium">Forgot Password</p>
                             <div className="flex items-center gap-2">
                                 <input type="checkbox" name="terms" id="" />
                                 <label className="ml-2" htmlFor="terms">Accept our Terms and condition</label>
@@ -62,9 +91,9 @@ const Login = () => {
 
 
                             <button className='w-full border-none rounded-lg
-                             bg-black text-white py-4'>Sign In</button>
+                             bg-black text-white py-4'>Signup</button>
                         </form>
-                        <div className='pt-5 space-y-2'>
+                        <div className=' space-y-2'>
                             <p className='text-center'>or</p>
                             <div className='flex flex-col md:flex-row gap-2'>
                                 <button className='flex items-center gap-2 border-2 p-4 rounded-lg'>
@@ -72,8 +101,8 @@ const Login = () => {
                                 <button className='flex items-center gap-2 border-2 p-4 rounded-lg'>
                                     <BsApple /> Sign in with Apple</button>
                             </div>
-                            <p className="text-center py-4">
-                                New to Furni Flex? Please  <Link to={'/signup'} className=" text-[#1E99F5] font-bold">Sign up</Link>
+                            <p className="text-center pt-4">
+                                Have an account? Please  <Link to={'/signin'} className=" text-[#1E99F5] font-bold">Sign In</Link>
                             </p>
 
                         </div>
@@ -97,4 +126,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
